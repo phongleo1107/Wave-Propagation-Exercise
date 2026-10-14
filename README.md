@@ -61,19 +61,3 @@ lambda = E * nu / ((1 + nu) * (1 - 2 * nu))
 v_L = sqrt((lambda + 2 * mu) / rho)
 v_T = sqrt(mu / rho)
 ```
-
-Verify the following before using results for an NDE decision:
-
-1. `E_GPa` is Young's modulus in GPa, `rho_kg_m3` is density in kg/m^3, and
-   Poisson's ratio is dimensionless; the script converts GPa to Pa.
-2. The material can reasonably be treated as homogeneous, isotropic, and
-   linearly elastic over the frequency, temperature, and strain range.
-3. Density and elastic constants correspond to the same alloy, condition,
-   temperature, and orientation.
-4. Scraped values are actually numeric, use the expected units, and come from
-   a trustworthy source; inspect `source_url` and any `None` fields manually.
-5. The sensitivity analysis varies Young's modulus while holding Poisson's
-   ratio fixed, and varies density independently; these are mathematical
-   sensitivity studies rather than a complete constitutive model.
-6. The scraper's generic label matching may miss tables or use a page's
-   display units; validate every scraped record before computation.
